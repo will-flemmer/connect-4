@@ -16,7 +16,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pipenv
-          pipenv shell
           pipenv install
           pip install setuptools wheel twine
       - name: Build and publish
