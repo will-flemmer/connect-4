@@ -1,6 +1,6 @@
-from app.agent.agent import Agent
-from app.board.board import Board
-from app.board_evaluator.board_evaluator import BoardEvaluator
+from ..agent.agent import Agent
+from ..board.board import Board
+from ..board_evaluator.board_evaluator import BoardEvaluator
 from ..utils import has_method
 import os
 

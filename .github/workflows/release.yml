@@ -14,7 +14,6 @@ jobs:
         with:
           python-version: "3.7.17"
 
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -30,16 +29,11 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
           pipenv --python 3.7.17 install
-          pipenv --python 3.7.17 requirements >> requirements.txt
-
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
 
       - name: Build and publish
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PUSH_PACKAGE_SECRET }}
         run: |
-          python setup.py sdist bdist_wheel
+          pipenv run python setup.py sdist bdist_wheel
           twine upload --repository pypi dist/*

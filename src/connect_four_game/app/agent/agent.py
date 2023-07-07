@@ -1,4 +1,4 @@
-from app.board.board import Board
+from ..board.board import Board
 from .base_agent import BaseAgent
 
 class Agent(BaseAgent):
