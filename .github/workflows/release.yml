@@ -12,7 +12,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.7"
+          python-version: "3.7.17"
 
 
       - name: Install dependencies
@@ -29,8 +29,8 @@ jobs:
       - name: Create Requirements File
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
-          pipenv --python 3.7 install
-          pipenv --python 3.7 requirements >> requirements.txt
+          pipenv --python 3.7.17 install
+          pipenv --python 3.7.17 requirements >> requirements.txt
 
       - name: Install Dependencies
         run: |
