@@ -29,8 +29,8 @@ jobs:
       - name: Create Requirements File
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
-          pipenv install
-          pipenv requirements >> requirements.txt
+          pipenv --python ${{ env.pythonLocation }} install
+          pipenv --python ${{ env.pythonLocation }} requirements >> requirements.txt
 
       - name: Install Dependencies
         run: |
