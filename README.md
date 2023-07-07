@@ -21,6 +21,9 @@ if __name__ == '__main__':
 ```python
 from connect_four_game import Game
 
+COLUMN_COUNT = 12 # normally 7
+ROW_COUNT = 9 # normally 6
+
 if __name__ == '__main__':
   red_rl_agent = RLAgent('red') # RLAgent is not included in the package
   blue_rl_agent = RLAgent('blue')
@@ -28,7 +31,7 @@ if __name__ == '__main__':
   game.start_game()
 ```
 
-#### Example of RLAgent which chooses random action
+#### Example of an RL Agent which randomly chooses columns
 
 ```python
 import random
