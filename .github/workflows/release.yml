@@ -1,8 +1,8 @@
 name: Release
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [master]
 
 jobs:
   deploy:
@@ -20,7 +20,7 @@ jobs:
       - name: Build and publish
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.PUSH_PACKAGE_SECRET }}
         run: |
           python setup.py sdist bdist_wheel
           twine upload --repository pypi dist/*
