@@ -16,4 +16,4 @@ mypy = "*"
 [dev-packages]
 
 [requires]
-python_version = "3.7.17"
+python_version = "3.7"
