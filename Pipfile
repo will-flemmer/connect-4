@@ -9,6 +9,9 @@ install = "*"
 setuptools = "*"
 wheel = "*"
 twine = "*"
+numpy = "*"
+pytest = "*"
+mypy = "*"
 
 [dev-packages]
 

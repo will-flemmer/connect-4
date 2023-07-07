@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pipenv install
+pipenv requirements >> requirements.txt
+pip install -r requirements.txt
