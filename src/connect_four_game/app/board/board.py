@@ -49,7 +49,19 @@ class Board:
         break
 
     return row
-  
+
+  def encode_board(self, agent):
+    encoded_board = []
+    for row in self.grid:
+      for cell in row:
+        if cell == '-':
+          encoded_board.append(0)
+        elif cell == agent.symbol:
+          encoded_board.append(1)
+        else:
+          encoded_board.append(-1)
+    return encoded_board
+
   def get_row(self, row):
     return self.grid[row]
 
