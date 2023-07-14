@@ -26,3 +26,7 @@ def test_can_get_cell():
   board.grid[0][0] = 'R'
   assert board.get_cell(0, 0) == 'R'
   assert board.get_cell(1, 0) == '-'
+
+def test_can_encode_the_board():
+  board = Board()
+  enc = board.encode_board()
